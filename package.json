@@ -17,8 +17,7 @@
     "jwt-simple": "^0.5.1",
     "moment": "^2.22.1",
     "mysql2": "^1.5.3",
-    "sequelize": "^4.37.7",
-    "uninstall": "0.0.0"
+    "sequelize": "^4.37.7"
   },
   "devDependecies": {
     "nodemon": "^1.17.2"
