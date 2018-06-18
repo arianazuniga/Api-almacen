@@ -13,6 +13,24 @@ function registroProducto(req,res){
 			res.status(500).send({message:"Error: "+ error});
 		});
 }
+function buscarProductoPorId(req,res){
+	var idInsumo= req.params.id
+
+	models.Producto.findOne({where:{Id_producto:idInsumo}})
+		.then(function(productos){
+			if(productos)
+			{
+				res.status(200).send()
+			}
+			else{
+				res.status(404).send()
+			}
+		})
+		.catch(function(error) {
+			res.status(500).send({message:"Error: "+error});
+		});
+}
 module.exports={
-	registroProducto
+	registroProducto,
+	buscarProductoPorId
 }

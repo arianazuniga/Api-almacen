@@ -4,5 +4,6 @@ var api=express.Router()
 var productoController=require('../controladores/productoController')
 
 api.post('/registro-producto',md_auth.ensureAuth, productoController.registroProducto)
+api.get('/validar-IdProducto/:id',md_auth.ensureAuth, productoController.buscarProductoPorId)
 
 module.exports=api
