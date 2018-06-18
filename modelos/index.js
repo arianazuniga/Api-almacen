@@ -13,10 +13,28 @@ var sequelize= new Sequelize(
 var insumo = sequelize.import(path.join(__dirname,'insumo'))
 var proveedor= sequelize.import(path.join(__dirname,'proveedor'))
 var usuario =sequelize.import(path.join(__dirname,'usuario'))
+var compra=sequelize.import(path.join(__dirname,'compra'))
+var detalleCompra=sequelize.import(path.join(__dirname,'detalleCompra'))
+var producto=sequelize.import(path.join(__dirname,'producto'))
+
+
+//relaciones
+detalleCompra.belongsTo(compra);
+compra.hasMany(detalleCompra);
+
+
+compra.belongsTo(proveedor);
+proveedor.hasMany(compra);
+
+detalleCompra.belongsTo(insumo);
+insumo.hasMany(detalleCompra);
 
 //sequelize.sync({force:true});
-sequelize.sync();
+sequelize.sync(); 
 
-exports.Insumo= insumo
+exports.Insumo= insumo 
 exports.Proveedor= proveedor
 exports.Usuario=usuario
+exports.Compra=compra
+exports.DetalleCompra=detalleCompra
+exports.Producto=producto

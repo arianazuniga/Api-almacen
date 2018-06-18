@@ -12,7 +12,35 @@ module.exports=(sequelize,DataTypes) =>{
 			type:DataTypes.STRING(15)
 		},
 		Unidad_medida:{
-			type: DataTypes.STRING(5)
+			type: DataTypes.STRING(15)
+		},
+		Estante:{
+			type:DataTypes.STRING(2)
+		},
+		Valor_Horizontal:{
+			type: DataTypes.INTEGER,
+			validate:{
+				isNumeric: true
+			}
+		},
+		Valor_Vertical:{
+			type: DataTypes.INTEGER,
+			validate:{
+				isNumeric: true
+			}
+		},
+		Stock:{
+			type: DataTypes.INTEGER,
+			defaultValue:0,
+			validate:{
+				isNumeric: true
+			}
+		},
+		Punto_Reorden:{
+			type: DataTypes.INTEGER,
+			validate:{
+				isNumeric: true
+			} 
 		}
 	})
 	return Insumo 

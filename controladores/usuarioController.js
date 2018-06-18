@@ -2,6 +2,7 @@ var models=require('../modelos')
 var bcrypt = require('bcrypt-nodejs')
 var sequelize = require('sequelize')
 var jwt = require('../services/jwt')
+
 function registroUsuario(req,res){
 	var params = req.body;
 
@@ -14,7 +15,6 @@ function registroUsuario(req,res){
 			usuario.Contrasenia=hash;
 			console.log(usuario.Contrasenia)
 			if(usuario.Rfc_usuario!= null && usuario.Rol!=null){
-				//Guardar usuario en la bd 
 				usuario.save()
 					.then(function(product){
 						res.status(200).send(usuario)
@@ -30,7 +30,7 @@ function registroUsuario(req,res){
 						res.status(500).send({message:"Error: "+error});
 					});
 			}else {
-				// Si faltan datos envía mensaje
+				
 				res.status(500).send({message:'Llena todos los campos'});
 			}
 		});
@@ -59,7 +59,7 @@ function loginUsuario(req,res){
 							res.status(200).send({usuario});
 						}
 					}else {
-						res.status(404).send({message:'El usuario no se ha podido logguear'});
+						res.status(404).send({message:"El usuario no se ha podido logguear"});
 					}
 				});
 			}else{
@@ -71,9 +71,23 @@ function loginUsuario(req,res){
 		});
 
 }
-
+function rfcUsuario(req,res){
+var condicion = req.params.id;
+	models.Usuario.findOne({where:{Rfc_usuario:condicion}})
+		.then(function(usuario){
+			if(usuario){
+				res.status(200).send(usuario)
+			}else{
+				res.status(404).send({message:"No existe el usuario"})
+			}
+		})
+		.catch(function(error){
+			res.status(500).send({message:"Error: "+ error})
+		});
+}
 module.exports={
 
 	registroUsuario,
-	loginUsuario
+	loginUsuario,
+	rfcUsuario
 }
