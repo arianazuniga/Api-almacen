@@ -29,7 +29,7 @@ proveedor.hasMany(compra);
 detalleCompra.belongsTo(insumo);
 insumo.hasMany(detalleCompra);
 
-sequelize.sync({force:true});
+//sequelize.sync({force:true});
 //sequelize.sync(); 
 
 exports.Insumo= insumo 
