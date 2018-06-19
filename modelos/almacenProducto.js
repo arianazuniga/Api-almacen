@@ -39,6 +39,9 @@ module.exports=(sequelize,DataTypes) =>{
 			validate:{
 				isNumeric: true
 			} 
+		},
+		Precio:{
+			type: DataTypes.FLOAT
 		}
 	})
 	return AlmacenProductos 

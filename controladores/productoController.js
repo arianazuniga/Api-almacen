@@ -97,6 +97,7 @@ function obtenerProductos(req,res){
       res.status(500).send({message:"Error: "+error});
     });
 }
+
 module.exports={
 	registroProducto,
 	buscarProductoPorId,
