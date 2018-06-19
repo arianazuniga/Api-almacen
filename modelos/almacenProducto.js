@@ -2,8 +2,9 @@ var sequelize=require('sequelize')
 module.exports=(sequelize,DataTypes) =>{
 	const AlmacenProductos =sequelize.define('Almacen_Productos',{
 		Id_almacen :{
-			type: DataTypes.STRING(5),
-			primaryKey: true
+			type: DataTypes.INTEGER,
+			primaryKey: true,
+			autoIncrement: true 
 		},
 		Estante:{
 			type:DataTypes.STRING(2)

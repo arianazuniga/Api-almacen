@@ -23,7 +23,7 @@ function buscarProductoPorId(req,res){
 		.then(function(productos){
 			if(productos)
 			{
-				res.status(200).send()
+				res.status(200).send(productos)
 			}
 			else{
 				res.status(404).send()
