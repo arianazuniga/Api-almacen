@@ -20,6 +20,9 @@ var usuario_rutas= require('./rutas/usuarioRutas')
 var detalle_rutas= require('./rutas/detalleCompraRutas')
 var compra_rutas=require('./rutas/compraRutas')
 var producto_rutas=require('./rutas/productoRutas')
+var categoria_rutas=require('./rutas/categoriaRutas')
+var color_rutas=require('./rutas/colorRutas')
+var talla_rutas=require('./rutas/tallaRutas')
 
 
 
@@ -30,6 +33,9 @@ app.use('/',usuario_rutas)
 app.use('/',detalle_rutas)
 app.use('/',compra_rutas)
 app.use('/',producto_rutas)
+app.use('/',talla_rutas)
+app.use('/',color_rutas)
+app.use('/',categoria_rutas)
 
 
 
