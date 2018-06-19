@@ -45,7 +45,8 @@ color.hasMany(almacenProducto);
 almacenProducto.belongsTo(talla);
 talla.hasMany(almacenProducto);
 
-sequelize.sync({force:true});
+
+//sequelize.sync({force:true});
 
 //sequelize.sync(); 
 
