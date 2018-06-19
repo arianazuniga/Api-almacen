@@ -48,7 +48,7 @@ talla.hasMany(almacenProducto);
 
 //sequelize.sync({force:true}); 
 
-sequelize.sync();  
+//sequelize.sync();  
 
 exports.Insumo= insumo 
 exports.Proveedor= proveedor 
