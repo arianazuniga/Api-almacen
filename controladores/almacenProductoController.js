@@ -33,7 +33,30 @@ function validarPosicion(req,res){
 			res.status(500).send({message:"Error: "+error});
 		});
 }
+
+
+function buscarAlmacen(req,res){
+	var params = req.params
+	var idProd = params.idProd
+	var idColor = params.idColor
+	var idTalla = params.idTalla
+
+	models.AlmacenProducto.findOne({where:{$and:[{ProductoIdProducto:idProd},{ColoreIdColor:idColor},{TallaIdTalla:idTalla}]}})
+		.then(function(almacen){
+			if(almacen)
+			{
+				res.status(200).send(almacen)
+			}
+			else{
+				res.status(404).send()
+			}
+		})
+		.catch(function(error) {
+			res.status(500).send({message:"Error: "+error});
+		});
+}
 module.exports={
 	registroAlmacenProducto,
-	validarPosicion
+	validarPosicion,
+	buscarAlmacen
 }
