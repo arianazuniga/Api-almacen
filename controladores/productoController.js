@@ -81,9 +81,26 @@ function obtenerImagen(req,res){
 		}
 	});
 }
+function obtenerProductos(req,res){
+
+  models.Producto.findAll()
+    .then(function(productos){
+      if(productos)
+      {
+        res.status(200).send(productos)
+      }
+      else{
+        res.status(404).send()
+      }
+    })
+    .catch(function(error) {
+      res.status(500).send({message:"Error: "+error});
+    });
+}
 module.exports={
 	registroProducto,
 	buscarProductoPorId,
 	subirImagen,
-	obtenerImagen
+	obtenerImagen,
+	obtenerProductos
 }

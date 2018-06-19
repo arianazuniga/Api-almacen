@@ -11,5 +11,6 @@ api.post('/registro-producto',md_auth.ensureAuth, productoController.registroPro
 api.get('/validar-IdProducto/:id',md_auth.ensureAuth, productoController.buscarProductoPorId)
 api.put('/subir-imagen/:id', [md_auth.ensureAuth, md_upload], productoController.subirImagen);
 api.get('/obtener-imagen/:imageFile', productoController.obtenerImagen);
+api.get('/producto', productoController.obtenerProductos);
 
 module.exports=api
