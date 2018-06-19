@@ -23,6 +23,7 @@ var producto_rutas=require('./rutas/productoRutas')
 var categoria_rutas=require('./rutas/categoriaRutas')
 var color_rutas=require('./rutas/colorRutas')
 var talla_rutas=require('./rutas/tallaRutas')
+var almacenProd_rutas=require('./rutas/almacenProductoRutas')
 
 
 
@@ -36,7 +37,7 @@ app.use('/',producto_rutas)
 app.use('/',talla_rutas)
 app.use('/',color_rutas)
 app.use('/',categoria_rutas)
-
+app.use('/',almacenProd_rutas)
 
 
 

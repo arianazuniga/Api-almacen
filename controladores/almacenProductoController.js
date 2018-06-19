@@ -4,7 +4,7 @@ const Op = sequelize.Op
 
 function registroAlmacenProducto(req,res){
 	var params=req.body
-	var almacen=models.Producto.build(params)
+	var almacen=models.AlmacenProducto.build(params)
 	almacen.save()
 		.then((almacenProductoRegistrado)=>{
 			res.status(200).send(almacenProductoRegistrado)
