@@ -24,6 +24,10 @@ var categoria_rutas=require('./rutas/categoriaRutas')
 var color_rutas=require('./rutas/colorRutas')
 var talla_rutas=require('./rutas/tallaRutas')
 var almacenProd_rutas=require('./rutas/almacenProductoRutas')
+var cliente_rutas=require('./rutas/clienteRutas')
+var formula_rutas=require('./rutas/formulaRutas')
+var detalleF_rutas=require('./rutas/detalleFormula')
+var ordenProd_rutas=require('./rutas/ordenProduccionRutas')
 
 
 
@@ -38,7 +42,10 @@ app.use('/',talla_rutas)
 app.use('/',color_rutas)
 app.use('/',categoria_rutas)
 app.use('/',almacenProd_rutas)
-
+app.use('/',cliente_rutas)
+app.use('/',formula_rutas)
+app.use('/',detalleF_rutas)
+app.use('/',ordenProd_rutas)
 
 
 module.exports=app
