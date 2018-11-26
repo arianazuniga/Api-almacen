@@ -47,8 +47,42 @@ function buscaremail(req,res){
 			res.status(500).send({message:"Error: "+error});
 		});
 }
+function mostrarProveedor(req,res){
+	models.Proveedor.findAll()
+		.then(function(proveedor){
+			if (proveedor) {
+			res.status(200).send(proveedor)
+		}
+		else{
+			res.status(404).send()
+		}
+
+		})
+		.catch(function(error) {
+			res.status(500).send({message:"Error: "+error});
+		});
+}
+function buscarProveedorId(req,res){
+	var rfc= req.params.rfc
+
+	models.Proveedor.findOne({where:{Rfc_proveedor:rfc}})
+		.then(function(proveedor){
+			if (proveedor) {
+			res.status(200).send(proveedor)
+		}
+		else{
+			res.status(404).send()
+		}
+
+		})
+		.catch(function(error) {
+			res.status(500).send({message:"Error: "+error});
+		});
+}
 module.exports={
 	registroProveedor,
 	buscarproveedor,
-	buscaremail
+	buscaremail,
+	mostrarProveedor,
+	buscarProveedorId
 }

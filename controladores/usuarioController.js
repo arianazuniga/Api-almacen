@@ -59,11 +59,13 @@ function loginUsuario(req,res){
 							res.status(200).send({usuario});
 						}
 					}else {
-						res.status(404).send({message:"El usuario no se ha podido logguear"});
+						res.status(404).send({message:"El usuario no se ha podido loguear"});
+						console.log(":v")
 					}
 				});
 			}else{
 				res.status(404).send({message:"No existe el usuario"})
+
 			}
 		})
 		.catch(function(error){

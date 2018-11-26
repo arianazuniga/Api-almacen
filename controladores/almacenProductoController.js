@@ -8,6 +8,7 @@ function registroAlmacenProducto(req,res){
 	almacen.save()
 		.then((almacenProductoRegistrado)=>{
 			res.status(200).send(almacenProductoRegistrado)
+			console.log("s")
 		})
 		.catch(function(error) {
 			res.status(500).send({message:"Error: "+ error});
@@ -38,10 +39,8 @@ function validarPosicion(req,res){
 function buscarAlmacen(req,res){
 	var params = req.params
 	var idProd = params.idProd
-	var idColor = params.idColor
-	var idTalla = params.idTalla
 
-	models.AlmacenProducto.findOne({where:{$and:[{ProductoIdProducto:idProd},{ColoreIdColor:idColor},{TallaIdTalla:idTalla}]}})
+	models.AlmacenProducto.findOne({where:{ProductoIdProducto:idProd}})
 		.then(function(almacen){
 			if(almacen)
 			{

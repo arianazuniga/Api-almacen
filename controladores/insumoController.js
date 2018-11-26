@@ -106,11 +106,31 @@ function validarPosicion(req,res){
 			res.status(500).send({message:"Error: "+error});
 		});
 }
+function mostrarInsumoR(req,res){
+	
+	models.Insumo.findAll({where:{Stock:{
+		[Op.lte]:sequelize.col('Punto_Reorden')
+
+	}}})
+		.then(function(insumos){
+			if(insumos)
+			{
+				res.status(200).send(insumos)
+			}
+			else{
+				res.status(404).send()
+			}
+		})
+		.catch(function(error) {
+			res.status(500).send({message:"Error: "+error});
+		});
+}
 module.exports={
 	registroInsumo,
 	mostrarInsumo,
 	buscarInsumo,
 	buscarInsumoporId,
 	actualizarInsumo,
-	validarPosicion
+	validarPosicion,
+	mostrarInsumoR
 }
