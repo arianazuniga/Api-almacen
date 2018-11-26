@@ -12,5 +12,7 @@ api.get('/validar-IdProducto/:id',md_auth.ensureAuth, productoController.buscarP
 api.put('/subir-imagen/:id', [md_auth.ensureAuth, md_upload], productoController.subirImagen);
 api.get('/obtener-imagen/:imageFile', productoController.obtenerImagen);
 api.get('/producto', productoController.obtenerProductos);
+api.get('/mostrar-productoR',md_auth.ensureAuth, productoController.mostrarProductoR)
+
 
 module.exports=api
