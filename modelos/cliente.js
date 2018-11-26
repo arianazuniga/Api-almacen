@@ -1,7 +1,7 @@
 var sequelize=require('sequelize')
 module.exports=(sequelize,DataTypes) =>{
-	const Proveedor =sequelize.define('Proveedores',{
-		Rfc_proveedor:{
+	const Cliente =sequelize.define('Clientes',{
+		Rfc_cliente:{
 			type:DataTypes.STRING(15),
 			primaryKey: true
 		},
@@ -33,5 +33,5 @@ module.exports=(sequelize,DataTypes) =>{
 			}
 		}
 	})
-	return Proveedor
+	return Cliente
 }

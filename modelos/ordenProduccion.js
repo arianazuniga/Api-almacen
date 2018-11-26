@@ -1,35 +1,24 @@
 var sequelize=require('sequelize')
 module.exports=(sequelize,DataTypes) =>{
-	const Compra =sequelize.define('Compras',{
-		No_compra :{
+	const OrdenProduccion =sequelize.define('Orden_Prod',{
+		No_orden:{
 			type: DataTypes.INTEGER,
 			primaryKey: true,
 			autoIncrement: true
 		},
-		Fecha_compra:{
+		Fecha_inicio:{
 			type:DataTypes.DATEONLY 
 		},
 		Fecha_entrega:{
 			type: DataTypes.DATEONLY
 		},
-		Subtotal:{
-			type: DataTypes.FLOAT,
+		Cantidad:{
+			type: DataTypes.INTEGER,
 			
-		},
-		Iva:{
-			type: DataTypes.FLOAT,
-			
-		},
-		Total:{
-			type: DataTypes.FLOAT,
-			
-		},
-		Recibido:{
-			type:DataTypes.BOOLEAN
 		},
 		Aprobado:{
 			type:DataTypes.BOOLEAN
 		}
 	})
-	return Compra 
+	return OrdenProduccion
 }

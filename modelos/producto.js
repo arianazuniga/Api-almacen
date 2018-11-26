@@ -12,6 +12,15 @@ module.exports=(sequelize,DataTypes) =>{
 		Descripcion:{
 			type:DataTypes.STRING(50)
 		},
+		Categoria:{
+			type:DataTypes.STRING(50)
+		},
+		Talla:{
+			type:DataTypes.STRING(50)
+		},
+		Color:{
+			type:DataTypes.STRING(50)
+		},
 		Imagen:{
 			type:DataTypes.STRING(70)
 		}
