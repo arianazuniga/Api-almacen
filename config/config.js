@@ -1,10 +1,11 @@
 module.exports={
+	port:3306,
 	db:{
-		database: 'db_almacen',
-		user: 'ApiAdmin',
-		password:'12345',
+		database: 'dbalmacen',
+		user: 'ArianaZuniga',
+		password:'ArianaZuniga',
 		options:{
-			host:'127.0.0.1',
+			host:'mydbalmacen.coqbcv5ezi7s.us-east-2.rds.amazonaws.com',
 			dialect:'mysql',
 			pool:{
 				maxConnections:5,
